@@ -1,0 +1,12 @@
+# системный мусор
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# редакторы
+.vscode/
+.idea/
+
+# если вдруг появится сборка
+node_modules/
+.vercel/

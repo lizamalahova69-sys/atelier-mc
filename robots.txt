@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://atelier-mc.vercel.app/sitemap.xml
