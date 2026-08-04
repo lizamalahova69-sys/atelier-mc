@@ -51,7 +51,7 @@
       <a href="#services">Услуги</a>
       <a href="#why">Почему мы</a>
       <a href="#how">Как работаем</a>
-      <a href="#gallery">Галерея</a>
+      <a href="/gallery">Галерея</a>
       <a href="#reviews">Отзывы</a>
       <a href="#contacts">Контакты</a>
     </nav>
@@ -259,62 +259,38 @@
     </div>
   </section>
 
-  <!-- ── Галерея: мозаика ──────────────────────────────────── -->
+  <!-- ── Галерея: витрина, полная — на /gallery ─────────── -->
   <section id="gallery" class="section">
     <div class="wrap">
       <header class="section-head reveal">
         <p class="eyebrow">Галерея</p>
         <h2>Ателье и работа</h2>
-        <p class="section-lead">Нажмите на фото, чтобы посмотреть крупнее.</p>
+        <p class="section-lead">Несколько кадров из мастерской. Нажмите на фото, чтобы посмотреть крупнее.</p>
       </header>
 
-      <!-- Замените на фотографии своих работ, см. README.md -->
-      <div class="gallery stagger" id="gallery-grid">
-        <button class="shot big reveal" type="button"
-                data-full="/photos/g1-platie-big.jpg">
-          <img src="/photos/g1-platie.jpg"
-               alt="Красное платье на вешалке рядом с катушками ниток" loading="lazy" width="1100" height="1100">
+      <div class="gallery teaser stagger">
+        <button class="shot reveal" type="button" data-full="/photos/g1-platie-big.jpg">
+          <img src="/photos/g1-platie.jpg" alt="Красное платье на вешалке рядом с катушками ниток" loading="lazy" width="1100" height="1100">
         </button>
-        <button class="shot reveal" type="button"
-                data-full="/photos/g2-katushki-big.jpg">
-          <img src="/photos/g2-katushki.jpg"
-               alt="Стеллаж с разноцветными катушками ниток" loading="lazy" width="800" height="600">
+        <button class="shot reveal" type="button" data-full="/photos/g5-maneken-big.jpg">
+          <img src="/photos/g5-maneken.jpg" alt="Костюм на портновском манекене" loading="lazy" width="1100" height="600">
         </button>
-        <button class="shot reveal" type="button"
-                data-full="/photos/g3-igla-big.jpg">
-          <img src="/photos/g3-igla.jpg"
-               alt="Швейная игла с нитью, макросъемка" loading="lazy" width="800" height="600">
+        <button class="shot reveal" type="button" data-full="/photos/g4-raskroy-big.jpg">
+          <img src="/photos/g4-raskroy.jpg" alt="Раскрой ткани ножницами" loading="lazy" width="800" height="1100">
         </button>
-        <button class="shot tall reveal" type="button"
-                data-full="/photos/g4-raskroy-big.jpg">
-          <img src="/photos/g4-raskroy.jpg"
-               alt="Раскрой ткани ножницами" loading="lazy" width="800" height="1100">
+        <button class="shot reveal" type="button" data-full="/photos/g2-katushki-big.jpg">
+          <img src="/photos/g2-katushki.jpg" alt="Стеллаж с разноцветными катушками ниток" loading="lazy" width="800" height="600">
         </button>
-        <button class="shot wide reveal" type="button"
-                data-full="/photos/g5-maneken-big.jpg">
-          <img src="/photos/g5-maneken.jpg"
-               alt="Костюм на портновском манекене" loading="lazy" width="1100" height="600">
+        <button class="shot reveal" type="button" data-full="/photos/g6-mashina-big.jpg">
+          <img src="/photos/g6-mashina.jpg" alt="Швейная машина в мастерской" loading="lazy" width="800" height="600">
         </button>
-        <button class="shot reveal" type="button"
-                data-full="/photos/g6-mashina-big.jpg">
-          <img src="/photos/g6-mashina.jpg"
-               alt="Швейная машина в мастерской" loading="lazy" width="800" height="600">
+        <button class="shot reveal" type="button" data-full="/photos/g10-master-big.jpg">
+          <img src="/photos/g10-master.jpg" alt="Мастер за работой с тканью" loading="lazy" width="800" height="600">
         </button>
-        <button class="shot reveal" type="button"
-                data-full="/photos/g7-veshalka-big.jpg">
-          <img src="/photos/g7-veshalka.jpg"
-               alt="Готовая одежда на вешалках" loading="lazy" width="800" height="600">
-        </button>
-        <button class="shot wide reveal" type="button"
-                data-full="/photos/g8-santimetr-big.jpg">
-          <img src="/photos/g8-santimetr.jpg"
-               alt="Рука с обмотанной сантиметровой лентой" loading="lazy" width="1100" height="600">
-        </button>
-        <button class="shot wide reveal" type="button"
-                data-full="/photos/g9-vitrina-big.jpg">
-          <img src="/photos/g9-vitrina.jpg"
-               alt="Катушки ниток в витрине ателье" loading="lazy" width="1100" height="600">
-        </button>
+      </div>
+
+      <div class="gallery-cta reveal">
+        <a class="btn btn-primary btn-lg" href="/gallery">Смотреть все работы</a>
       </div>
     </div>
   </section>
@@ -413,7 +389,7 @@
     </div>
     <nav class="footer-nav" aria-label="Навигация в подвале">
       <a href="#services">Услуги</a>
-      <a href="#gallery">Галерея</a>
+      <a href="/gallery">Галерея</a>
       <a href="#reviews">Отзывы</a>
       <a href="#contacts">Контакты</a>
     </nav>

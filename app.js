@@ -22,6 +22,10 @@
     if (e.target.tagName === 'A') closeMenu();
   });
 
+  addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && nav.classList.contains('is-open')) closeMenu();
+  });
+
   /* ── Тень у шапки при прокрутке ────────────────────────── */
   const header = document.querySelector('.site-header');
   const onScroll = () => header.classList.toggle('is-stuck', window.scrollY > 8);
@@ -46,7 +50,8 @@
   setTimeout(() => revealables.forEach((el) => el.classList.add('is-in')), 1500);
 
   /* ── Подсветка активного пункта меню ───────────────────── */
-  const links = [...nav.querySelectorAll('a')];
+  // только якоря: ссылки на другие страницы (/gallery) селектором не ищутся
+  const links = [...nav.querySelectorAll('a[href^="#"]')];
   const sections = links
     .map((a) => document.querySelector(a.getAttribute('href')))
     .filter(Boolean);
@@ -100,9 +105,25 @@
     }
   }
 
+  /* ── Лёгкий параллакс фона в шапке ─────────────────────── */
+  const heroImg = document.querySelector('.hero-media img');
+  if (heroImg && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    let ticking = false;
+    addEventListener('scroll', () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const y = Math.min(window.scrollY, 900);
+        heroImg.style.transform = `translate3d(0,${y * 0.18}px,0) scale(1.1)`;
+        ticking = false;
+      });
+    }, { passive: true });
+  }
+
   /* ── Лайтбокс галереи ──────────────────────────────────── */
   const shots = [...document.querySelectorAll('.shot')];
   const lb = document.getElementById('lightbox');
+  if (!lb || !shots.length) return;   // на странице без галереи дальше делать нечего
   const lbImg = lb.querySelector('.lb-img');
   const lbCaption = lb.querySelector('.lb-caption');
   const btnPrev = lb.querySelector('.lb-prev');
@@ -155,26 +176,8 @@
         const next = e.shiftKey ? idx - 1 : idx + 1;
         focusables[(next + focusables.length) % focusables.length].focus();
       }
-      return;
     }
-    if (e.key === 'Escape' && nav.classList.contains('is-open')) closeMenu();
   });
-
-  /* ── Лёгкий параллакс фона в шапке ─────────────────────── */
-  const heroImg = document.querySelector('.hero-media img');
-  const calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (heroImg && !calm) {
-    let ticking = false;
-    addEventListener('scroll', () => {
-      if (ticking) return;
-      ticking = true;
-      requestAnimationFrame(() => {
-        const y = Math.min(window.scrollY, 900);
-        heroImg.style.transform = `translate3d(0,${y * 0.18}px,0) scale(1.1)`;
-        ticking = false;
-      });
-    }, { passive: true });
-  }
 
   /* ── Свайпы в лайтбоксе ────────────────────────────────── */
   let touchX = null;

@@ -3,14 +3,20 @@
 Статический сайт: HTML + CSS + немного JS. **Сборка не нужна**, Node/npm не нужен.
 
 ```
-index.html    вся страница
-styles.css    оформление
+index.html    главная страница
+gallery.html  галерея работ, открывается по адресу /gallery
+styles.css    оформление обеих страниц
 app.js        меню, галерея, ленивые виджеты Яндекса
+photos/       все фотографии сайта
 favicon.svg   иконка вкладки
 og.svg        картинка для превью в мессенджерах
+vercel.json   чтобы адрес был /gallery, а не /gallery.html
 robots.txt    сюда же sitemap
 sitemap.xml
 ```
+
+Шапка и подвал скопированы в обоих файлах — сборки нет, поэтому общий кусок вынести некуда.
+Если правите меню или телефон, поменяйте **в обоих файлах**.
 
 ---
 
@@ -60,7 +66,8 @@ sitemap.xml
 | Фон первого экрана | `index.html`, блок `<div class="hero-media">` |
 | 8 карточек услуг | `index.html`, блок `<div class="services-grid">`, тег `<img class="s-img">` |
 | Фото в разделе «Почему к нам приходят» | `index.html`, блок `<div class="split-media">` |
-| 9 фото в галерее | `index.html`, блок `<div class="gallery">` |
+| 6 фото витрины на главной | `index.html`, блок `<div class="gallery teaser">` |
+| 15 фото полной галереи | `gallery.html`, блок `<div class="gallery">` |
 | Фон широкой полосы с цитатой | `styles.css`, правило `.banner`, свойство `background-image` |
 
 Как заменить: положите файлы в папку `photos/` рядом с `index.html` и поменяйте `src` и `alt`:
