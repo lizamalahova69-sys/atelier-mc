@@ -165,7 +165,18 @@
           </div>
         </article>
 
-        <article class="s-card reveal">
+        <article class="s-card wide reveal">
+          <img class="s-img" src="/photos/s9-partii.jpg"
+               alt="Пошив изделий партиями в швейном цехе" loading="lazy" width="700" height="500">
+          <div class="s-body">
+            <h3>Пошив партиями</h3>
+            <p>Массовый пошив — от небольших партий до крупных заказов. Форма и спецодежда,
+              костюмы для коллективов и мероприятий, изделия под заказ организации.
+              Единый крой и размерный ряд, одинаковое качество на всём тираже.</p>
+          </div>
+        </article>
+
+        <article class="s-card wide reveal">
           <img class="s-img" src="/photos/s6-sport.jpg"
                alt="Золотистая ткань с пайетками" loading="lazy" width="700" height="500">
           <div class="s-body">
@@ -174,7 +185,7 @@
           </div>
         </article>
 
-        <article class="s-card reveal">
+        <article class="s-card wide reveal">
           <img class="s-img" src="/photos/s7-tekstil.jpg"
                alt="Бежевая штора из плотной ткани" loading="lazy" width="700" height="500">
           <div class="s-body">
@@ -226,7 +237,7 @@
   <section class="banner" aria-label="О мастерской">
     <div class="wrap banner-inner reveal">
       <p class="banner-quote">«Хорошо сидящая вещь — это не размер,<br>а несколько сантиметров в нужных местах»</p>
-      <a class="btn btn-glass btn-lg" href="tel:+79615942650">Записаться на примерку</a>
+      <button class="btn btn-glass btn-lg" type="button" data-open-contacts>Записаться на примерку</button>
     </div>
   </section>
 
@@ -400,6 +411,55 @@
 <div class="action-bar">
   <a class="btn btn-primary" href="tel:+79615942650">Позвонить</a>
   <a class="btn btn-tg" href="https://t.me/MalakhovaSvetlana" target="_blank" rel="noopener">Telegram</a>
+</div>
+
+<!-- ── Окно «Написать нам» ─────────────────────────────────── -->
+<div class="modal" id="contact-modal" role="dialog" aria-modal="true" aria-labelledby="cm-title" hidden>
+  <div class="modal-card">
+    <button class="modal-close" type="button" aria-label="Закрыть">✕</button>
+    <h2 id="cm-title">Записаться на примерку</h2>
+    <p>Выберите, где вам удобнее написать. Ответим в рабочее время.</p>
+
+    <ul class="channels">
+      <li>
+        <a class="channel channel-tg" href="https://t.me/MalakhovaSvetlana" target="_blank" rel="noopener">
+          <span class="channel-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="21" height="21" fill="currentColor"><path d="M21.9 4.3l-3.1 14.8c-.2 1-.9 1.3-1.7.8l-4.7-3.5-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.9 8.9-8c.4-.3-.1-.5-.6-.2L6.7 12.9l-4.7-1.5c-1-.3-1-1 .2-1.5l18.4-7.1c.9-.3 1.6.2 1.3 1.5z"/></svg>
+          </span>
+          <span class="channel-text"><strong>Telegram</strong><small>@MalakhovaSvetlana</small></span>
+        </a>
+      </li>
+      <li>
+        <a class="channel channel-wa" href="https://wa.me/79615942650" target="_blank" rel="noopener">
+          <span class="channel-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="21" height="21" fill="currentColor"><path d="M12 2a10 10 0 00-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1012 2zm5.8 14.2c-.2.7-1.2 1.3-1.9 1.4-.5.1-1.2.2-3.4-.7-2.9-1.2-4.7-4.1-4.9-4.3-.1-.2-1.1-1.5-1.1-2.8s.7-2 .9-2.2c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.2.1.4.1.6-.1l.8-1c.2-.2.3-.2.6-.1l2 1c.3.1.4.2.5.3 0 .1 0 .6-.3 1.3z"/></svg>
+          </span>
+          <span class="channel-text"><strong>WhatsApp</strong><small>+7 961 594-26-50</small></span>
+        </a>
+      </li>
+      <!-- ВКонтакте: пришлите адрес вашей страницы и раскомментируйте этот блок,
+           подставив ссылку вместо ССЫЛКА_НА_ВК
+      <li>
+        <a class="channel channel-vk" href="ССЫЛКА_НА_ВК" target="_blank" rel="noopener">
+          <span class="channel-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="21" height="21" fill="currentColor"><path d="M12.8 16.6c-5 0-8.2-3.5-8.3-9.3h2.6c.1 4.3 2 6.1 3.4 6.5V7.3h2.4v3.6c1.4-.2 2.9-1.8 3.4-3.6h2.4c-.4 2.2-1.9 3.8-3 4.5 1.1.5 2.8 1.9 3.5 4.8h-2.7c-.5-1.8-1.8-3.2-3.6-3.4v3.4h-.1z"/></svg>
+          </span>
+          <span class="channel-text"><strong>ВКонтакте</strong><small>написать в сообщения</small></span>
+        </a>
+      </li>
+      -->
+      <li>
+        <a class="channel channel-tel" href="tel:+79615942650">
+          <span class="channel-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="21" height="21" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 006.6 6.6l2.2-2.2a1 1 0 011-.24 11.4 11.4 0 003.6.58 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.46.57 3.6a1 1 0 01-.25 1z"/></svg>
+          </span>
+          <span class="channel-text"><strong>Позвонить</strong><small>+7 961 594-26-50</small></span>
+        </a>
+      </li>
+    </ul>
+
+    <p class="modal-note">Примерка и оценка работы — бесплатно</p>
+  </div>
 </div>
 
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Просмотр фотографии" hidden>

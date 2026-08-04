@@ -105,6 +105,44 @@
     }
   }
 
+  /* ── Окно «Написать нам» ───────────────────────────────── */
+  const modal = document.getElementById('contact-modal');
+  if (modal) {
+    const modalClose = modal.querySelector('.modal-close');
+    let modalOpener = null;
+
+    const openModal = (from) => {
+      modalOpener = from;
+      modal.hidden = false;
+      document.body.style.overflow = 'hidden';
+      modalClose.focus();
+    };
+    const closeModal = () => {
+      modal.hidden = true;
+      document.body.style.overflow = '';
+      if (modalOpener) modalOpener.focus();
+    };
+
+    document.querySelectorAll('[data-open-contacts]').forEach((btn) =>
+      btn.addEventListener('click', () => openModal(btn)));
+
+    modalClose.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+    // ссылку выбрали — окно больше не нужно
+    modal.querySelectorAll('.channel').forEach((a) => a.addEventListener('click', closeModal));
+
+    addEventListener('keydown', (e) => {
+      if (modal.hidden) return;
+      if (e.key === 'Escape') { closeModal(); return; }
+      if (e.key !== 'Tab') return;
+      // держим фокус внутри окна
+      const items = [modalClose, ...modal.querySelectorAll('.channel')];
+      const i = items.indexOf(document.activeElement);
+      e.preventDefault();
+      items[((e.shiftKey ? i - 1 : i + 1) + items.length) % items.length].focus();
+    });
+  }
+
   /* ── Лёгкий параллакс фона в шапке ─────────────────────── */
   const heroImg = document.querySelector('.hero-media img');
   if (heroImg && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
