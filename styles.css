@@ -207,7 +207,7 @@ p:last-child{margin-bottom:0}
   position:relative;isolation:isolate;
   min-height:clamp(340px,46vh,480px);display:grid;place-items:center;
   padding:70px 0;text-align:center;color:#fff;
-  background-image:url("https://images.unsplash.com/photo-1618866903271-595806e0679d?auto=format&fit=crop&w=1800&q=60");
+  background-image:url("/photos/banner.jpg");
   background-size:cover;background-position:center 40%;background-attachment:fixed;
 }
 .banner::after{content:"";position:absolute;inset:0;z-index:-1;background:rgba(24,14,19,.66)}
